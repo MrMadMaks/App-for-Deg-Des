@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = () => {
   return (
@@ -6,9 +7,11 @@ const Card = () => {
       <div className="card__form">
         <div className="card__inner">
           <div className="card__control">
-            <button type="button" className="card__btn card__btn--edit">
-              Редактировать
-            </button>
+            <Link to={'/event/:id'} className="card__btn card__btn--edit">
+              <button type="button" className="card__btn card__btn--edit">
+                Редактировать
+              </button>
+            </Link>
             <button type="button" className="card__btn card__btn--archive">
               В архив
             </button>

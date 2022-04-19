@@ -7,13 +7,13 @@ import Sort from "../Sort/Sort";
 const Board = ({ mode }) => {
 
   const showSort = () => {
-    if (mode === AppRoute.MAIN) {
+    if (mode === '/') {
       return <Sort />
     }
   }
 
   const showLoadMoreBtn = () => {
-    if (mode === AppRoute.MAIN || mode === AppRoute.ARCHIVE) {
+    if (mode === '/' || mode === '/archive') {
       return <LoadMoreBtn />
     }
   }

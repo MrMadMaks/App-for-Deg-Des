@@ -1,18 +1,23 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import { AppRoute } from "../../const";
 
 const Filter = ({ mode }) => {
 
   const CreateBtn = () => {
+
     return (
-      <button name="control" className="btn-add">
-        Создать
-      </button>
+      <Link to={'/event'} >
+        <button name="control" className="btn-add">
+          Создать
+        </button>
+      </Link>
+
     )
   }
 
   const ShowCreateBtn = () => {
-    if (mode === AppRoute.MAIN) {
+    if (mode === '/') {
       return <CreateBtn />
     }
   }

@@ -1,10 +1,29 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const AddEvent = () => {
+
+  const { id } = useParams();
+  function renderTitle() {
+    if (id) {
+      return <h2 className="board__title">Редактирование события</h2>
+    } else {
+      return <h2 className="board__title">Добавление события</h2>
+    }
+  }
+
+  function renderBtn() {
+    if (id) {
+      return <button type="submit" className="btn-submit">Редактировать</button>
+    } else {
+      return <button type="submit" className="btn-submit">Добавить</button>
+    }
+  }
+
   return (
-    <section class="board">
+    <section className="board">
       <form className="board__form">
-        <h2 className="board__title">Добавление события</h2>
+        {renderTitle()}
         <fieldset className="board__field board__field--theme">
           <label htmlFor="theme" className="board__label board__label--theme">Тема:</label>
           <textarea
@@ -32,7 +51,7 @@ const AddEvent = () => {
           />
         </fieldset>
         <div className="btns">
-          <button type="submit" className="btn-submit">Добавить</button>
+          {renderBtn()}
           <button type="reset" className="btn-reset">Очистить</button>
         </div>
       </form>
